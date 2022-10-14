@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "phplink";
 $password = "phpsqllink";
-$dbname = "myDB";
+$dbname = "landdeeds";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
