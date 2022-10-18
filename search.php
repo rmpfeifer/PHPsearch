@@ -18,7 +18,7 @@ $result = $conn -> query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "DATE: " . $row["DATE"]. " - Name: " . $row["Last_Name_Grantor_1"]. "Township" . $row["TSP"]. "<br>";
+    echo "DATE: " . $row["DATE"]."<br>";
   }
 } else {
   echo "0 results";
