@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
 ?> 
 <html>
   <body>
-    <h1>hello</h1>
+    <button onClick="appendText()">
+    <script src="script.js"></script>
   </body>
 </html>
