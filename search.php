@@ -21,9 +21,3 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 ?> 
-<html>
-  <body>
-    <button onClick="appendText()">
-    <script src="script.js"></script>
-  </body>
-</html>
