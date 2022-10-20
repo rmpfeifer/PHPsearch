@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +25,7 @@ $servername = "localhost";
 $username = "phplink";
 $password = "phpsqllink";
 $db = "landdeeds";
+$table = "landdeeds";
 
 $con = mysqli_connect($servername,$username,$password);
 if (!$con) {
@@ -33,18 +33,22 @@ if (!$con) {
 }
 
 mysqli_select_db($con,$db);
-$sql="SELECT * FROM landdeeds WHERE Last_Name_Grantor_1 LIKE '%$search%'";
+$sql="SELECT * FROM $table WHERE Last_Name_Grantor_1 LIKE '%$search%'";
 $result = mysqli_query($con,$sql);
 
 echo "<table>
 <tr>
 <th>Date</th>
 <th>Name</th>
+<th>Township</th>
+<th>Range</th>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
   echo "<td>" . $row['DATE'] . "</td>";
   echo "<td>" . $row['Last_Name_Grantor_1'] . "</td>";
+  echo "<td>" . $row['TSP'] . "</td>";
+  echo "<td>" . $row['RGE'] . "</td>";
   echo "</tr>";
 }
 echo "</table>";
