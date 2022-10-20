@@ -19,13 +19,21 @@ th {text-align: left;}
 <body>
 
 <?php
-$con = mysqli_connect('localhost','phplink','phpsqllink');
+
+$search = $_GET ['search'];
+
+$servername = "localhost";
+$username = "phplink";
+$password = "phpsqllink";
+$db = "landdeeds";
+
+$con = mysqli_connect($servername,$username,$password);
 if (!$con) {
   die('Could not connect: ' . mysqli_error($con));
 }
 
-mysqli_select_db($con,"landdeeds");
-$sql="SELECT * FROM landdeeds";
+mysqli_select_db($con,$db);
+$sql="SELECT * FROM landdeeds WHERE Last_Name_Grantor_1 LIKE '%$search%'";
 $result = mysqli_query($con,$sql);
 
 echo "<table>
@@ -42,5 +50,6 @@ while($row = mysqli_fetch_array($result)) {
 echo "</table>";
 mysqli_close($con);
 ?>
+  <a href='form.html'>Return</a>
 </body>
 </html> 
