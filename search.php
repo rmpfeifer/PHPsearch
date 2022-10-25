@@ -33,7 +33,7 @@ if (!$con) {
 }
 
 mysqli_select_db($con,$db);
-$sql="SELECT * FROM $table WHERE Last_Name_Grantor_1 LIKE '%$search%'";
+$sql="SELECT * FROM $table WHERE Last_Name_Grantee_1 LIKE '%$search%'";
 $result = mysqli_query($con,$sql);
 
 
@@ -47,7 +47,7 @@ echo "<table>
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
   echo "<td>" . $row['DATE'] . "</td>";
-  echo "<td>" . $row['Last_Name_Grantor_1'] . "</td>";
+  echo "<td>" . $row['Last_Name_Grantee_1'] . "</td>";
   echo "<td>" . $row['TSP'] . "</td>";
   echo "<td>" . $row['RGE'] . "</td>";
   echo "</tr>";
