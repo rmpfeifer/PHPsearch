@@ -36,7 +36,7 @@ mysqli_select_db($con,$db);
 $sql="SELECT * FROM $table WHERE Last_Name_Grantor_1 LIKE '%$search%'";
 $result = mysqli_query($con,$sql);
 
-/*  --PHP output all table
+
 echo "<table>
 <tr>
 <th>Date</th>
@@ -52,7 +52,7 @@ while($row = mysqli_fetch_array($result)) {
   echo "<td>" . $row['RGE'] . "</td>";
   echo "</tr>";
 }
-*/
+
 
 echo "</table>";
 mysqli_close($con);
